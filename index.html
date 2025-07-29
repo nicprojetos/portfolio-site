@@ -1,49 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Seu Nome</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Nícollas Carvalho| Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <canvas id="hacker-bg"></canvas>
-    <div class="container">
-        <button id="toggle-theme">Modo Escuro/Claro</button>
-
-        <section class="catalogs">
-            <div class="catalog" onclick="location.href='#whoami'">whoam i</div>
-            <div class="catalog" onclick="location.href='#projects'">projects</div>
-            <div class="catalog" onclick="location.href='#contacts'">contacts</div>
-        </section>
-
-        <section class="languages-catalog">
-            <h2>Linguagens</h2>
-            <div class="icons">
-                <img src="icons/html5.svg" alt="HTML5">
-                <img src="icons/css3.svg" alt="CSS3">
-                <img src="icons/javascript.svg" alt="JavaScript">
-                <img src="icons/python.svg" alt="Python">
-                <img src="icons/java.svg" alt="Java">
-                <img src="icons/c.svg" alt="C">
-                <img src="icons/cpp.svg" alt="C++">
-                <img src="icons/php.svg" alt="PHP">
-                <img src="icons/rust.svg" alt="Rust">
-                <!-- Adicione mais ícones conforme desejar -->
-            </div>
-        </section>
+  <canvas id="matrix-bg"></canvas>
+  <main>
+    <div class="theme-switcher">
+      <input type="checkbox" id="theme-toggle" />
+      <label for="theme-toggle" class="toggle-label">🌙</label>
     </div>
 
-    <script src="hacker-bg.js"></script>
-    <script>
-        // Alternância de tema
-        const btn = document.getElementById('toggle-theme');
-        btn.onclick = () => {
-            document.body.classList.toggle('dark');
-            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-        };
-        // Mantém o tema salvo
-        if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
-    </script>
+    <section class="catalogs">
+      <a class="catalog-card" href="#Who am i">Who am i</a>
+      <a class="catalog-card" href="#Projects">Projects</a>
+      <a class="catalog-card" href="#Contacts">Contacts</a>
+    </section>
+
+    <section class="skills">
+      <h2>Languages & Tools</h2>
+      <div class="skills-icons">
+        <img src="icons/html5.svg" alt="HTML5" title="HTML5" />
+        <img src="icons/css3.svg" alt="CSS3" title="CSS3" />
+        <img src="icons/javascript.svg" alt="JavaScript" title="JavaScript" />
+        <img src="icons/typescript.svg" alt="TypeScript" title="TypeScript" />
+        <img src="icons/react.svg" alt="React" title="React" />
+        <img src="icons/nodejs.svg" alt="Node.js" title="Node.js" />
+        <img src="icons/python.svg" alt="Python" title="Python" />
+        <img src="icons/java.svg" alt="Java" title="Java" />
+        <img src="icons/c.svg" alt="C" title="C" />
+        <img src="icons/cpp.svg" alt="C++" title="C++" />
+        <img src="icons/php.svg" alt="PHP" title="PHP" />
+        <!-- Adicione mais ícones se desejar -->
+      </div>
+    </section>
+  </main>
+  <script src="matrix-bg.js"></script>
+  <script>
+    // Theme switcher
+    const toggle = document.getElementById('theme-toggle');
+    toggle.checked = localStorage.getItem('theme') === 'dark';
+    document.body.classList.toggle('dark', toggle.checked);
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark', toggle.checked);
+      localStorage.setItem('theme', toggle.checked ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
