@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Seu Nome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="hacker-bg"></canvas>
+    <div class="container">
+        <button id="toggle-theme">Modo Escuro/Claro</button>
+
+        <section class="catalogs">
+            <div class="catalog" onclick="location.href='#whoami'">whoam i</div>
+            <div class="catalog" onclick="location.href='#projects'">projects</div>
+            <div class="catalog" onclick="location.href='#contacts'">contacts</div>
+        </section>
+
+        <section class="languages-catalog">
+            <h2>Linguagens</h2>
+            <div class="icons">
+                <img src="icons/html5.svg" alt="HTML5">
+                <img src="icons/css3.svg" alt="CSS3">
+                <img src="icons/javascript.svg" alt="JavaScript">
+                <img src="icons/python.svg" alt="Python">
+                <img src="icons/java.svg" alt="Java">
+                <img src="icons/c.svg" alt="C">
+                <img src="icons/cpp.svg" alt="C++">
+                <img src="icons/php.svg" alt="PHP">
+                <img src="icons/rust.svg" alt="Rust">
+                <!-- Adicione mais ícones conforme desejar -->
+            </div>
+        </section>
+    </div>
+
+    <script src="hacker-bg.js"></script>
+    <script>
+        // Alternância de tema
+        const btn = document.getElementById('toggle-theme');
+        btn.onclick = () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        };
+        // Mantém o tema salvo
+        if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+    </script>
+</body>
+</html>
