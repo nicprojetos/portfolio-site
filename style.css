@@ -1,0 +1,109 @@
+:root {
+    --bg: #f8f9fa;
+    --text: #222;
+    --catalog-bg: #ffffffcc;
+    --catalog-hover: #b5ffd1;
+    --icon-bg: #e0ffe6;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+body.dark {
+    --bg: #071a0b;
+    --text: #aaffcc;
+    --catalog-bg: #112818cc;
+    --catalog-hover: #20ff77;
+    --icon-bg: #163a1d;
+}
+#hacker-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+#toggle-theme {
+    margin: 0 0 30px 0;
+    padding: 10px 24px;
+    background: var(--catalog-bg);
+    color: var(--text);
+    border: none;
+    border-radius: 18px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 2px 10px #00000015;
+    transition: background 0.2s, color 0.2s;
+}
+.catalogs {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.catalog {
+    flex: 1;
+    min-width: 120px;
+    background: var(--catalog-bg);
+    color: var(--text);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0002;
+    text-align: center;
+    padding: 36px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.catalog:hover {
+    background: var(--catalog-hover);
+    color: #071a0b;
+    transform: scale(1.06);
+}
+.languages-catalog {
+    margin-top: 30px;
+    background: var(--catalog-bg);
+    border-radius: 12px;
+    padding: 24px 0 10px 0;
+    box-shadow: 0 2px 8px #0001;
+    text-align: center;
+}
+.languages-catalog h2 {
+    margin: 0 0 20px 0;
+    color: var(--text);
+}
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+.icons img {
+    width: 48px;
+    height: 48px;
+    background: var(--icon-bg);
+    border-radius: 8px;
+    padding: 7px;
+    box-shadow: 0 1px 3px #0001;
+    transition: transform 0.15s;
+}
+.icons img:hover {
+    transform: scale(1.2) rotate(-7deg);
+    background: var(--catalog-hover);
+}
+@media (max-width: 700px) {
+    .catalogs { flex-direction: column; gap: 18px; }
+    .catalog { padding: 26px 0; font-size: 1.18em;}
+}
